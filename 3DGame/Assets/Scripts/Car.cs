@@ -21,7 +21,7 @@ public class Car : MonoBehaviour
     /// 開空調
     /// </summary>
     /// <returns>傳回開啟空調</returns>
-    public bool cool();
+    public bool cool()
     {
     print("開啟空調了!");  
     return true;
