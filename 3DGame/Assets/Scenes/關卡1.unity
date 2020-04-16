@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 190203883}
   - component: {fileID: 190203882}
   m_Layer: 0
-  m_Name: "\u5730\u677F"
+  m_Name: "\u5730\u677F\u7B2C\u4E00\u584A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,6 +642,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1191672012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191672014}
+  - component: {fileID: 1191672013}
+  m_Layer: 0
+  m_Name: "\u904A\u6232\u7BA1\u7406\u5668"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1191672013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191672012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6dd4739f97b4b40a20bcde963bf78c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrains:
+  - {fileID: 190203884}
+  - {fileID: 2041350086}
+  speedTerrain: 4
+--- !u!4 &1191672014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191672012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1202315000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -727,6 +774,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   joy: {fileID: 1222099728}
+  cd: 1
+  fireBall: {fileID: 8109240158433319455, guid: 43333a4f4299a514697dc51ba165046b,
+    type: 3}
 --- !u!4 &1202315004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: db8b927f3205ca042a0e457646ad0300,
@@ -1033,7 +1083,7 @@ GameObject:
   - component: {fileID: 2041350085}
   - component: {fileID: 2041350084}
   m_Layer: 0
-  m_Name: "\u5730\u677F (1)"
+  m_Name: "\u5730\u677F\u7B2C\u4E8C\u584A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
