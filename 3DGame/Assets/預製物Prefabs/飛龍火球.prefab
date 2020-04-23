@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3149856745787456910}
   - component: {fileID: 5671937560258309014}
   - component: {fileID: -8047033632393696864}
+  - component: {fileID: -1689321770105487356}
+  - component: {fileID: 4730211808405235269}
   m_Layer: 0
   m_Name: "\u98DB\u9F8D\u706B\u7403"
   m_TagString: Untagged
@@ -4771,3 +4773,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &-1689321770105487356
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8109240158433319455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4730211808405235269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8109240158433319455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d6a5b27c3982d4e9a6f72fc48a078d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
