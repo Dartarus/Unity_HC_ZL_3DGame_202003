@@ -15,3 +15,5 @@ MonoBehaviour:
   hp: 100
   attack: 50
   speed: 10
+  propHp: 0.7
+  propCd: 0.7

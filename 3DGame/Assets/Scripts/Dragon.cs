@@ -17,6 +17,8 @@ public class Dragon : MonoBehaviour
     public float speedFireBall = 300;
     [Header("攻擊力"), Range(1, 5000)]
     public float attack = 35;
+    [Header("血量"), Range(1, 1000)]
+    public float hp = 100;
 
 
     //第一種寫法：需要欄位
@@ -79,7 +81,10 @@ public class Dragon : MonoBehaviour
         }
      }
 
-
+    /// <summary>
+    /// 延遲生成火球
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator DelayFireBall()
     {
         yield return new WaitForSeconds(delayFire);      //延遲生成火球
@@ -100,7 +105,23 @@ public class Dragon : MonoBehaviour
     
     }
 
+    /// <summary>
+    /// 吃掉加速藥水
+    /// </summary>
+    private void EatPropCd()
+    {
+        cd -= 0.5f;
+        cd = Mathf.Clamp(cd, 0.6f, 100);
+    }
 
+    /// <summary>
+    /// 吃掉補血藥水
+    /// </summary>
+    private void EatPropHp()
+    {
+        hp += 20;
+        hp = Mathf.Clamp(hp, 0, 100);
+    }
 
 
     private void Start()
@@ -115,4 +136,20 @@ public class Dragon : MonoBehaviour
         Move();
         Attack();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "加速藥水")
+        {
+            EatPropCd();
+        }
+
+        if (other.tag == "補血藥水")
+        {
+            EatPropHp();
+        }
+    }
+
+
+
 }
