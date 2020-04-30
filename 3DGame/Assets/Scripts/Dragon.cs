@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Dragon : MonoBehaviour
@@ -19,7 +20,8 @@ public class Dragon : MonoBehaviour
     public float attack = 35;
     [Header("血量"), Range(1, 1000)]
     public float hp = 100;
-
+    [Header("血條")]
+    public Image hpBar;
 
     //第一種寫法：需要欄位
     //public Transform tra;
@@ -97,7 +99,7 @@ public class Dragon : MonoBehaviour
 
         temp.AddComponent<Ball>();     //暫存火球.添加元件<球>()
         temp.GetComponent<Ball>().damage = attack; //暫存火球.添加元件<球>().傷害值 = 攻擊力
-
+        temp.GetComponent<Ball>().type = "玩家";
 
         //Quaternion.identity    Unity的角度類型 - 零角度
 
@@ -119,20 +121,57 @@ public class Dragon : MonoBehaviour
     /// </summary>
     private void EatPropHp()
     {
-        hp += 20;
-        hp = Mathf.Clamp(hp, 0, 100);
+        StartCoroutine(HpBarEffect());
     }
 
+    /// <summary>
+    /// 血條增加特效
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator HpBarEffect()
+    {
+        float hpAdd = hp + 20;
+
+        while (hp < hpAdd)
+        {
+            hp++;
+            hp = Mathf.Clamp(hp, 0, 100);
+            hpBar.fillAmount = hp / 100;
+            yield return null;           //null 一偵
+
+        }
+    }
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    /// <param name="damage">接收到的傷害值</param>
+    public void Damage(float damage)
+    {
+        hp -= damage;
+        hpBar.fillAmount = hp / 100;
+        if (hp <= 0) Dead();
+    }
+
+
+
+    /// <summary>
+    /// 死亡
+    /// </summary>
+    private void Dead()
+    {
+        ani.SetBool("死亡開關", true);
+    }
 
     private void Start()
     {
         //取得元件<泛型>()
         ani = GetComponent<Animator>();
+        hpBar.fillAmount = hp / 100;
     }
-
 
     private void Update()
     {
+        if (ani.GetBool("死亡開關")) return;
         Move();
         Attack();
     }
@@ -142,11 +181,13 @@ public class Dragon : MonoBehaviour
         if (other.tag == "加速藥水")
         {
             EatPropCd();
+            Destroy(other.gameObject);
         }
 
         if (other.tag == "補血藥水")
         {
             EatPropHp();
+            Destroy(other.gameObject);
         }
     }
 

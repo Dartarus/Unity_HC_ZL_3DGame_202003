@@ -13,5 +13,10 @@ public class MonsterData : ScriptableObject
     public float propHp;
     [Header("加速藥水掉落機率"), Range(0, 1)]
     public float propCd;
+    [Header("冷卻時間"), Range(1, 10)]
+    public float cd;
+    [Header("子彈速度"), Range(1,50)]
+    public float bulletSpeed;
+
 
 }
