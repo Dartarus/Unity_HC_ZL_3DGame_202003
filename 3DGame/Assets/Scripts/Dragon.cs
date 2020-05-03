@@ -40,7 +40,7 @@ public class Dragon : MonoBehaviour
     /// </summary>
     public void Move()
     {
-        print("移動中~");
+        //print("移動中~");
 
         //第一種寫法
         //tra.Translate(0,0,1);

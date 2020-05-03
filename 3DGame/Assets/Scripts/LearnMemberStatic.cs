@@ -4,11 +4,11 @@ public class LearnMemberStatic : MonoBehaviour
 {
     //定義屬性
     //語法:類型 名稱 指定 值;
-    float a = 0.5f;          //float 浮點數
-    int b = 70;              //int  整數
-    bool c = true;           //bool 布林值
-    bool d = false;
-    string e = "我是字串";   //string 字串
+    //float a = 0.5f;          //float 浮點數
+    //int b = 70;              //int  整數
+    //bool c = true;           //bool 布林值
+   // bool d = false;
+   // string e = "我是字串";   //string 字串
 
     //修飾詞 類型 名稱 指定 值;
     //公開 public 允許所有文件存取:顯示在屬性面板
