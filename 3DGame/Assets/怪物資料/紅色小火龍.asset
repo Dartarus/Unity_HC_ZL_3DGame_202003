@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   attack: 50
-  speed: 10
+  speed: 5
   propHp: 0.7
   propCd: 0.7
   cd: 1

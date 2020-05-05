@@ -26,6 +26,12 @@ public class Monster : MonoBehaviour
         hp = data.hp;
         ani = GetComponent<Animator>();
     }
+
+    private void Update()
+    {
+        Attack();
+    }
+
     /// <summary>
     /// 受傷
     /// </summary>
@@ -33,12 +39,13 @@ public class Monster : MonoBehaviour
     public void Damage(float damage)
     {
         hp -= damage;
+        GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
+        Invoke("ResetColor", 0.1f);
         if (hp <= 0) Dead();
     }
-
-    private void Update()
+    private void ResetColor()
     {
-        Attack();
+        GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.white;
     }
 
     /// <summary>

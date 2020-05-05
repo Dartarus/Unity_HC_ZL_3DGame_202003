@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "關卡資料", menuName = "Dartarus/關卡資料")]
-public class SpwanData : ScriptableObject
+public class SpawnData : ScriptableObject
 {
     public SpawnTime[] spawn;
 }
@@ -10,6 +10,7 @@ public class SpwanData : ScriptableObject
 [System.Serializable]
 public class SpawnTime
 {
+
     public string name;
     public float time;
     public SpawnMonster[] monsters;

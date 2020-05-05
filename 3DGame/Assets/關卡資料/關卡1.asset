@@ -12,3 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c933b5d21b599940afb2ff306f90298, type: 3}
   m_Name: "\u95DC\u53611"
   m_EditorClassIdentifier: Assembly-CSharp::SpwanData
+  spawn:
+  - name: "\u7B2C\u4E00\u6CE2"
+    time: 1
+    monsters:
+    - monster: {fileID: 100102, guid: ff3dd417bb566b849b752ce57810bbf5, type: 3}
+      x: 48
+    - monster: {fileID: 100102, guid: ff3dd417bb566b849b752ce57810bbf5, type: 3}
+      x: 52
+  - name: "\u7B2C\u4E8C\u6CE2"
+    time: 5
+    monsters:
+    - monster: {fileID: 6894876811154892556, guid: 459caa8261027b341a7a3ed323b67810,
+        type: 3}
+      x: 50
+  - name: "\u7B2C\u4E09\u6CE2"
+    time: 15
+    monsters:
+    - monster: {fileID: 100102, guid: ff3dd417bb566b849b752ce57810bbf5, type: 3}
+      x: 45
+    - monster: {fileID: 6894876811154892556, guid: 459caa8261027b341a7a3ed323b67810,
+        type: 3}
+      x: 50
+    - monster: {fileID: 100102, guid: ff3dd417bb566b849b752ce57810bbf5, type: 3}
+      x: 55
